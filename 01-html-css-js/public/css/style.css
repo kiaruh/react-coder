@@ -1,0 +1,16 @@
+body {
+    background:rgb(28, 232, 255);
+}
+
+header {
+    background:rgb(0, 217, 255);
+    display: flex;
+    border: solid 1px black;
+    
+}
+nav {
+    margin: auto;
+}
+ul {
+    list-style: none;
+}
