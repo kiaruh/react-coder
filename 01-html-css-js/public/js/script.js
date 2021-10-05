@@ -6,11 +6,11 @@ window.addEventListener('load', function(){
     let mensajeComment = document.querySelector('.comment-text-warning')
     let comment = document.querySelector('.comment')
 
-    email.addEventListener('input', validateEmail, false)
-    email.addEventListener('blur', validateEmail, false)
+    email.addEventListener('input', validateEmail)
+    email.addEventListener('blur', validateEmail)
 
-    comment.addEventListener('input', validateComment, false)
-    comment.addEventListener('blur', validateComment, false)
+    comment.addEventListener('input', validateComment)
+    comment.addEventListener('blur', validateComment)
 
     let regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
 
@@ -20,7 +20,7 @@ window.addEventListener('load', function(){
         validateComment()
     })
 
-    function validateEmail(e) {
+    function validateEmail() {
         if (!email.value) {
             mensajeEmail.innerHTML = 'Escribe tu Email'
         } else if (!regexEmail.test(email.value)) {
@@ -30,9 +30,9 @@ window.addEventListener('load', function(){
         }
     }
 
-    function validateComment(e) {
+    function validateComment() {
         if (!comment.value) {
-            mensajeComment.innerHTML = 'Escribe tu comentario'
+            mensajeComment.innerHTML = 'El Campo de comentario esta vacio'
         } else {
             mensajeComment.innerHTML = ' '
             form.addEventListener('submit', () => form.submit())
